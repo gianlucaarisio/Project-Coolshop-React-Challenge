@@ -1,14 +1,13 @@
 import { useState } from "react";
 import "./App.css";
 import Button from "./components/Button";
+import Title from "./components/Title";
 
 export default function App() {
-  const [rows, setRows] = useState([
-    { sign: "+", value: "0", disabled: false },
-  ]);
+  const [rows, setRows] = useState([{ sign: "+", value: "", disabled: false }]);
 
   const addRow = () => {
-    setRows([...rows, { sign: "+", value: "0", disabled: false }]);
+    setRows([...rows, { sign: "+", value: "", disabled: false }]);
   };
 
   const deleteRow = (index) => {
@@ -44,9 +43,9 @@ export default function App() {
 
   return (
     <>
-      <h1 className="text-center text-4xl md:text-5xl font-semibold">
-        Project Coolshop
-      </h1>
+      <Title className={"text-center"}>
+        Project Coolshop - React Challenge
+      </Title>
       <div className="relative mt-20 mx-6">
         <Button onClick={addRow}>Add Row</Button>
 
